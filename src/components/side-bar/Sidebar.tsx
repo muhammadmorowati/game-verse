@@ -1,9 +1,7 @@
 "use client"
-
-import { Home, Flame, Star, Pin } from "lucide-react"
-import { useState } from "react"
 import { SidebarItem } from "./SidebarItem"
 import { items } from "./SidebarItems"
+import SidebarFooter from './SidebarFooter'
 
 
 
@@ -13,8 +11,8 @@ export const Sidebar = () => {
         <aside
         className=
         {
-          `hidden lg:block group fixed left-0 top-16 h-[calc(100vh-4rem)] bg-[#0d0d14] text-white
-           transition-all duration-300 w-16 hover:w-40`
+          `hidden lg:block group fixed left-0 top-16 h-[calc(100vh-4rem)]
+           bg-[#0d0d14] border-r text-white transition-all duration-300 w-16 hover:w-48`
         }
             
         >
@@ -23,7 +21,9 @@ export const Sidebar = () => {
         {items.map((item) => (
           <SidebarItem key={item.label} {...item} />
         ))}
-      </nav>
+          <SidebarFooter/>
+        </nav>
+        
                 </aside >
     )
 }
